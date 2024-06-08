@@ -540,4 +540,21 @@ namespace Refit
         /// </summary>
         public UriFormat UriFormat { get; } = uriFormat;
     }
+
+    /// <summary>
+    /// TimeoutAttribute.
+    /// </summary>
+    /// <seealso cref="System.Attribute" />
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="TimeoutAttribute"/> class.
+    /// </remarks>
+    /// <param name="timeout">The overrides timeout of request. </param>
+    [AttributeUsage(AttributeTargets.Method)]
+    public sealed class TimeoutAttribute(TimeSpan timeout) : Attribute
+    {
+        /// <summary>
+        /// Specifies how the Query Params should be encoded.
+        /// </summary>
+        public TimeSpan Timeout { get; } = timeout;
+    }
 }
